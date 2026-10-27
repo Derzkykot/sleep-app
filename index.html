@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10141c"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Тихая ночь"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon.png"><link rel="icon" href="icon.png"><link rel="stylesheet" href="style.css?v=1"><title>Тихая ночь</title></head>
+<body><main>
+<header><span aria-hidden="true">☾</span> Тихая ночь</header>
+<h1>Время отдыхать</h1><p class="intro">Выбери звук и устройся поудобнее</p>
+<div class="sounds" role="group" aria-label="Выбор звука">
+<button type="button" data-sound="rain" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 14a4 4 0 0 1-1-7 6 6 0 0 1 11-1 4 4 0 0 1 2 8M8 17l-1 3m6-3-1 3m6-3-1 3"/></svg><span>Дождь</span><small>Ровный шелест</small></button>
+<button type="button" data-sound="plane" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4L22 2ZM11 13 22 2"/></svg><span>Самолёт</span><small>Гул в салоне</small></button>
+</div>
+<div class="now"><h2 id="current">Дождь</h2><p id="status" role="status">Готов к воспроизведению</p></div>
+<button type="button" id="play" aria-label="Включить"><svg id="play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m8 4 13 8-13 8Z"/></svg></button>
+<div class="volume"><label for="volume">Громкость <output id="level">35%</output></label><input id="volume" type="range" min="0" max="100" value="35"><small>Также можно использовать кнопки iPhone</small></div>
+<button type="button" id="timer" aria-expanded="false" aria-controls="intervals"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="14" r="8"/><path d="M9 2h6m-3 4V2m0 7v5l3 2m4-11 2 2"/></svg>Таймер сна</span><span id="duration">Выключен</span></button>
+<div id="intervals" role="group" aria-label="Интервал таймера" hidden>
+<button data-seconds="0" aria-pressed="true">Без таймера</button><button data-seconds="900" aria-pressed="false">15 мин</button><button data-seconds="1800" aria-pressed="false">30 мин</button><button data-seconds="2700" aria-pressed="false">45 мин</button><button data-seconds="3600" aria-pressed="false">60 мин</button><button data-seconds="5400" aria-pressed="false">90 мин</button>
+<p>Новый интервал начинает отсчёт заново. На паузе таймер тоже ждёт.</p>
+</div>
+<footer><span id="remaining" role="timer">Без таймера</span><small id="fade-note" hidden>Плавное затихание · 60 секунд</small></footer>
+<a class="credits" href="credits.html">Источники звуков</a>
+</main><script type="module" src="app.js?v=1"></script></body></html>
